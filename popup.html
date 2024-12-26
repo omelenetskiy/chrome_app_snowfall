@@ -22,15 +22,8 @@
             <h2 class="section-title">Music Control</h2>
             <div class="music-control-content">
                 <button class="playerButton" id="toggleMusic">
-                    <svg fill="none" height="24" id="playIcon" stroke="currentColor" stroke-linecap="round"
-                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
-                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                    </svg>
-                    <svg fill="none" height="24" id="pauseIcon" stroke="currentColor" stroke-linecap="round"
-                         stroke-linejoin="round" stroke-width="2" style="display: none;" viewBox="0 0 24 24" width="24">
-                        <rect height="16" width="4" x="6" y="4"></rect>
-                        <rect height="16" width="4" x="14" y="4"></rect>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" id="playIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" id="pauseIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pause"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></svg>
                 </button>
                 <div class="select-wrapper">
                     <select class="music-track-select" id="musicTrack">
@@ -107,6 +100,7 @@
         </div>
     </div>
 </div>
-<script src="popup.js"></script>
+<script src="snowfall.js"></script>
+<script src="player.js"></script>
 </body>
 </html>
