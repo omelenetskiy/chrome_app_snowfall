@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Snowfall Extension</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="popup.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>SNOWFALL SETTINGS</h1>
+    <div class="section">
+        <div class="toggle-wrapper">
+            <h2 class="section-title">Enable Snowfall</h2>
+            <label class="toggle" for="toggleSnowfall">
+                <input id="toggleSnowfall" type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="music-control">
+            <h2 class="section-title">Music Control</h2>
+            <div class="music-control-content">
+                <button class="playerButton" id="toggleMusic">
+                    <svg fill="none" height="24" id="playIcon" stroke="currentColor" stroke-linecap="round"
+                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    <svg fill="none" height="24" id="pauseIcon" stroke="currentColor" stroke-linecap="round"
+                         stroke-linejoin="round" stroke-width="2" style="display: none;" viewBox="0 0 24 24" width="24">
+                        <rect height="16" width="4" x="6" y="4"></rect>
+                        <rect height="16" width="4" x="14" y="4"></rect>
+                    </svg>
+                </button>
+                <div class="select-wrapper">
+                    <select class="music-track-select" id="musicTrack">
+                        <option value="track1">Steklovata - Новый год</option>
+                        <option value="track2">Happy New Year</option>
+                        <option value="track3">Last Christmas</option>
+                        <option value="track4">Let It Snow! Let It Snow! Let It Snow!</option>
+                    </select>
+                    <svg class="select-arrow" fill="none" height="12" viewBox="0 0 12 12" width="12">
+                        <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="snoflake-style">
+            <h2 class="section-title">Choose Snowflake Style</h2>
+            <div class="radio-wrapper">
+                <input id="snowflake1" name="snowflake" type="radio" value="❆">
+                <label for="snowflake1">
+                    <div class="icon-box">❆</div>
+                </label>
+                <input id="snowflake2" name="snowflake" type="radio" value="❅">
+                <label for="snowflake2">
+                    <div class="icon-box">❅</div>
+                </label>
+                <input checked id="snowflake3" name="snowflake" type="radio" value="❄">
+                <label for="snowflake3">
+                    <div class="icon-box">❄</div>
+                </label>
+                <input id="snowflake4" name="snowflake" type="radio" value="✧">
+                <label for="snowflake4">
+                    <div class="icon-box">✧</div>
+                </label>
+            </div>
+        </div>
+
+        <div class="range-wrapper">
+            <h2 class="section-title">Snowfall Intensity</h2>
+            <input id="intensity" max="500" min="10" type="range" value="50">
+        </div>
+
+        <div class="range-wrapper">
+            <label class="section-title" for="baseSize">Base Snowflake Size</label>
+            <input id="baseSize" max="4" min="1" step="0.1" type="range" value="5">
+        </div>
+
+        <div class="color-wrapper">
+            <p class="section-title">Snowflake Color</p>
+            <div class="color-options">
+                <input id="color1" name="color" type="radio" value="#FFFFFF">
+                <label for="color1">
+                    <div class="color-box" style="background-color: #FFFFFF;"></div>
+                </label>
+                <input id="color2" name="color" type="radio" value="#ADD8E6">
+                <label for="color2">
+                    <div class="color-box" style="background-color: #ADD8E6;"></div>
+                </label>
+                <input id="color3" name="color" type="radio" value="#87CEEB">
+                <label for="color3">
+                    <div class="color-box" style="background-color: #87CEEB;"></div>
+                </label>
+                <input id="color4" name="color" type="radio" value="#4682B4">
+                <label for="color4">
+                    <div class="color-box" style="background-color: #4682B4;"></div>
+                </label>
+                <input id="color5" name="color" type="radio" value="#00BFFF">
+                <label for="color5">
+                    <div class="color-box" style="background-color: #00BFFF;"></div>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>
