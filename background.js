@@ -1,3 +1,5 @@
+chrome.storage.session.setAccessLevel({ accessLevel: 'TRUSTED_AND_UNTRUSTED_CONTEXTS' });
+
 let creating;
 
 async function setupOffscreenDocument() {
@@ -29,32 +31,35 @@ chrome.runtime.onStartup.addListener(setupOffscreenDocument);
 
 chrome.runtime.onMessage.addListener((msg, sender, response) => {
     if (msg.action === 'toggleMusic') {
-        chrome.storage.sync.get(['musicEnabled'], (result) => {
+        chrome.storage.session.get(['musicEnabled'], (result) => {
             const musicEnabled = !result.musicEnabled;
-            chrome.storage.sync.set({musicEnabled});
+            chrome.storage.session.set({ musicEnabled });
 
             if (musicEnabled) {
-                chrome.runtime.sendMessage({action: 'play'});
+                chrome.runtime.sendMessage({ action: 'play' });
             } else {
-                chrome.runtime.sendMessage({action: 'pause'});
+                chrome.runtime.sendMessage({ action: 'pause' });
             }
 
-            response({status: musicEnabled ? 'playing' : 'paused'});
+            response({ status: musicEnabled ? 'playing' : 'paused' });
         });
         return true;
     }
 
     if (msg.action === 'setTrack') {
-        chrome.storage.sync.set({musicEnabled: true}, () => {
-            response({status: 'playing'});
+        chrome.storage.session.set({ currentTrack: msg.track, musicEnabled: true }, () => {
+
+            console.log({track: msg.track})
+
+            chrome.runtime.sendMessage({ action: 'setTrack', track: msg.track });
+            response({ status: 'playing' });
         });
         return true;
     }
 
-
     if (msg.action === 'getMusicStatus') {
-        chrome.storage.sync.get(['musicEnabled'], (result) => {
-            response({status: result.musicEnabled ? 'playing' : 'paused'});
+        chrome.storage.session.get(['musicEnabled'], (result) => {
+            response({ status: result.musicEnabled ? 'playing' : 'paused' });
         });
         return true;
     }
