@@ -5,7 +5,8 @@
   "description": "Adds falling snowflakes and music to your browser",
   "permissions": [
     "storage",
-    "offscreen"
+    "offscreen",
+    "scripting"
   ],
   "background": {
     "service_worker": "background.js"
@@ -33,6 +34,7 @@
       ]
     }
   ],
+  "host_permissions": ["<all_urls>"],
   "web_accessible_resources": [
     {
       "resources": [
