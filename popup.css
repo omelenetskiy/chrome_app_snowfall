@@ -293,3 +293,14 @@ input[type="radio"]:disabled + label .color-box:hover,
 input[type="radio"]:disabled + label .icon-box:hover {
     transform: none;
 }
+
+#reloadApp {
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    color: #eee;
+}

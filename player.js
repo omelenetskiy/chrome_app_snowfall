@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const playIcon = document.getElementById('playIcon');
     const pauseIcon = document.getElementById('pauseIcon');
     const musicTrackSelect = document.getElementById('musicTrack');
+    const reloadApp = document.getElementById('reloadApp');
 
     const togglePlayButtonCallback = (response) => {
         if (response && response.status === 'playing') {
@@ -25,6 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     toggleMusic.addEventListener('click', function () {
         chrome.runtime.sendMessage({ action: 'toggleMusic' }, togglePlayButtonCallback);
+    });
+
+    reloadApp.addEventListener('click', function () {
+        chrome.runtime.reload();
     });
 
     musicTrackSelect.addEventListener('change', () => {
